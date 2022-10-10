@@ -3,3 +3,24 @@ body {
     font-family: Arial;
     text-align: center;
 }
+
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.choice {
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.choice:hover {
+    border: 3px solid blue;
+}
+
+.choice img {
+    width: 150px;
+    height: 150px;
+}

@@ -13,7 +13,8 @@ body {
 
 .choice {
     cursor: pointer;
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .choice:hover {
@@ -23,6 +24,12 @@ body {
 .choice img {
     width: 150px;
     height: 150px;
+    padding: 10px;
+}
+
+.choice p {
+    margin: 0;
+    padding: 10px;
 }
 
 .scores {

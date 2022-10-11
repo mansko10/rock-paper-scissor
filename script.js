@@ -1,8 +1,11 @@
 let choices = document.querySelector('.choices');
 let feedback = document.querySelector('.feedback');
-let computerScore = document.querySelector('.computer');
-let playerScore = document.querySelector('.playerScore');
+let computerScoreDisplay = document.querySelector('.computer');
+let playerScoreDisplay = document.querySelector('.player');
 let result = document.querySelector('.result');
+
+let computerScore = 0;
+let playerScore = 0;
 
 let generateComputerChoice = () => {
     let randomNumber = Math.trunc(Math.random() * 29);
@@ -21,16 +24,28 @@ let compareChoices = (computerChoice, playerChoice) => {
         feedback.textContent = `Computer chose ${computerChoice}. It's a draw.`;
     } else if (computerChoice === 'rock' && playerChoice === 'paper') {
         feedback.textContent = `Computer chose ${computerChoice}. You win.`;
+        playerScore++;
+        playerScoreDisplay.textContent = playerScore;
     } else if (computerChoice === 'rock' && playerChoice === 'scissor') {
         feedback.textContent = `Computer chose ${computerChoice}. You lose.`
+        computerScore++;
+        computerScoreDisplay.textContent = computerScore;
     } else if (computerChoice === 'paper' && playerChoice === 'rock') {
         feedback.textContent = `Computer chose ${computerChoice}. You lose.`;
+        computerScore++;
+        computerScoreDisplay.textContent = computerScore;
     } else if (computerChoice === 'paper' && playerChoice === 'scissor') {
         feedback.textContent = `Computer chose ${computerChoice}. You win.`
+        playerScore++;
+        playerScoreDisplay.textContent = playerScore;
     } else if (computerChoice === 'scissor' && playerChoice === 'rock') {
         feedback.textContent = `Computer chose ${computerChoice}. You win.`;
+        playerScore++;
+        playerScoreDisplay.textContent = playerScore;
     } else if (computerChoice === 'scissor' && playerChoice === 'paper') {
         feedback.textContent = `Computer chose ${computerChoice}. You lose.`
+        computerScore++;
+        computerScoreDisplay.textContent = computerScore;
     }
 }
 
@@ -40,7 +55,6 @@ choices.addEventListener('click', e => {
         let playerChoice = e.target.parentElement.id;
         
         compareChoices(computerChoice, playerChoice);
-
     }
 })
 

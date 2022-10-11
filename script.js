@@ -50,11 +50,11 @@ let compareChoices = (computerChoice, playerChoice) => {
 }
 
 let checkScore = () => {
-    if (computerScore === 1) {
+    if (computerScore === 5) {
         choices.remove();
         result.style.color = 'red';
         result.textContent = 'You lose. Reload to play again.';
-    } else if (playerScore === 1) {
+    } else if (playerScore === 5) {
         choices.remove();
         result.style.color = 'green';
         result.textContent = 'You win. Reload to play again.';

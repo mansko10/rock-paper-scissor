@@ -49,12 +49,26 @@ let compareChoices = (computerChoice, playerChoice) => {
     }
 }
 
+let checkScore = () => {
+    if (computerScore === 1) {
+        choices.remove();
+        result.style.color = 'red';
+        result.textContent = 'You lose. Reload to play again.';
+    } else if (playerScore === 1) {
+        choices.remove();
+        result.style.color = 'green';
+        result.textContent = 'You win. Reload to play again.';
+    }
+}
+
 choices.addEventListener('click', e => {
     if (e.target.parentElement.className.includes('choice')) {
         let computerChoice = generateComputerChoice();
         let playerChoice = e.target.parentElement.id;
         
         compareChoices(computerChoice, playerChoice);
+
+        checkScore();
     }
 })
 
